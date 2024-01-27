@@ -8,6 +8,7 @@ const speed = 200
 const jump_force = 600
 
 @export var ground_detector: Area2D
+@export var anim: AnimatedSprite2D
 var is_jumpable: bool = true
 
 
@@ -26,16 +27,27 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("jump") && is_jumpable:
 		velocity.y  -= jump_force
+		anim.play("jump")
 		is_jumpable = false
 	
 	if Input.is_action_pressed("move_left") && Input.is_action_pressed("move_right"):
 		velocity.x = 0
+		if is_jumpable:
+			anim.play("idle")
 	elif Input.is_action_pressed("move_left"):
 		velocity.x = -speed
+		anim.flip_h = true
+		if is_jumpable:
+			anim.play("walk")
 	elif Input.is_action_pressed("move_right"):
 		velocity.x = speed
+		anim.flip_h = false
+		if is_jumpable:
+			anim.play("walk")
 	else:
 		velocity.x = 0
+		if is_jumpable:
+			anim.play("idle")
 	
 	move_and_slide()
 

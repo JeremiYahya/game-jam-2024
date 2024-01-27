@@ -1,31 +1,94 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0tqvvt5riso2"]
+[gd_scene load_steps=12 format=3 uid="uid://c0tqvvt5riso2"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_oalyw"]
-[ext_resource type="Texture2D" uid="uid://mov0pxlwn3q" path="res://sprites/temp_player.png" id="2_bvj1t"]
+[ext_resource type="Texture2D" uid="uid://80b2jd5if810" path="res://sprites/MC.png" id="2_cnltk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t611n"]
-size = Vector2(50, 50)
+size = Vector2(48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6sje"]
+atlas = ExtResource("2_cnltk")
+region = Rect2(262, 132, 131, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iqxe"]
+atlas = ExtResource("2_cnltk")
+region = Rect2(131, 132, 131, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v8b0"]
+atlas = ExtResource("2_cnltk")
+region = Rect2(0, 0, 131, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bewom"]
+atlas = ExtResource("2_cnltk")
+region = Rect2(131, 0, 131, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y3l1"]
+atlas = ExtResource("2_cnltk")
+region = Rect2(262, 0, 131, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvm7k"]
+atlas = ExtResource("2_cnltk")
+region = Rect2(0, 132, 131, 132)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jdufl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6sje")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iqxe")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v8b0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bewom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y3l1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvm7k")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmax2"]
-size = Vector2(50, 20)
+size = Vector2(48, 20)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("ground_detector")]
-position = Vector2(0, 600)
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("ground_detector", "anim")]
+position = Vector2(0, 560)
 collision_mask = 131
 script = ExtResource("1_oalyw")
 ground_detector = NodePath("GroundDetector")
+anim = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(50, 500)
 shape = SubResource("RectangleShape2D_t611n")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(50, 500)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_bvj1t")
+sprite_frames = SubResource("SpriteFrames_jdufl")
+animation = &"jump"
+autoplay = "idle"
 
 [node name="GroundDetector" type="Area2D" parent="."]
-position = Vector2(50, 535)
+position = Vector2(50, 542)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetector"]
