@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0tqvvt5riso2"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_oalyw"]
+[ext_resource type="Texture2D" uid="uid://mov0pxlwn3q" path="res://sprites/temp_player.png" id="2_bvj1t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t611n"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmax2"]
+size = Vector2(50, 20)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("ground_detector")]
+position = Vector2(0, 600)
+collision_mask = 131
+script = ExtResource("1_oalyw")
+ground_detector = NodePath("GroundDetector")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(50, 500)
+shape = SubResource("RectangleShape2D_t611n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(50, 500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_bvj1t")
+
+[node name="GroundDetector" type="Area2D" parent="."]
+position = Vector2(50, 535)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetector"]
+shape = SubResource("RectangleShape2D_kmax2")

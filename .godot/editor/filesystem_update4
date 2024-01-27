@@ -1,0 +1,9 @@
+res://scenes/main.tscn
+res://scenes/main.gd
+res://scenes/player.tscn
+res://scenes/pit.gd
+res://scenes/player.gd
+res://scenes/enemy.gd
+res://scenes/rat.gd
+res://scenes/platform.tscn
+res://scenes/camera_trigger.gd

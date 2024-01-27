@@ -1,0 +1,109 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4w5po77f8ard"]
+
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_0uewo"]
+[ext_resource type="Texture2D" uid="uid://ghjro5lg8dnd" path="res://sprites/temp_enemy.png" id="2_qdb0v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nck2"]
+size = Vector2(40, 40)
+
+[node name="Jumpscare01" type="Node2D"]
+
+[node name="Rat" type="Area2D" parent="."]
+position = Vector2(1470, 690)
+collision_layer = 128
+script = ExtResource("1_0uewo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rat"]
+shape = SubResource("RectangleShape2D_0nck2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rat"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_qdb0v")
+
+[node name="PatrolTimer" type="Timer" parent="Rat"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="StopTimer" type="Timer" parent="Rat"]
+one_shot = true
+
+[node name="Rat2" type="Area2D" parent="."]
+position = Vector2(1510, 690)
+collision_layer = 128
+script = ExtResource("1_0uewo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rat2"]
+shape = SubResource("RectangleShape2D_0nck2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rat2"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_qdb0v")
+
+[node name="PatrolTimer" type="Timer" parent="Rat2"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="StopTimer" type="Timer" parent="Rat2"]
+one_shot = true
+
+[node name="Rat3" type="Area2D" parent="."]
+position = Vector2(1550, 690)
+collision_layer = 128
+script = ExtResource("1_0uewo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rat3"]
+shape = SubResource("RectangleShape2D_0nck2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rat3"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_qdb0v")
+
+[node name="PatrolTimer" type="Timer" parent="Rat3"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="StopTimer" type="Timer" parent="Rat3"]
+one_shot = true
+
+[node name="Rat4" type="Area2D" parent="."]
+position = Vector2(1590, 690)
+collision_layer = 128
+script = ExtResource("1_0uewo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rat4"]
+shape = SubResource("RectangleShape2D_0nck2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rat4"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_qdb0v")
+
+[node name="PatrolTimer" type="Timer" parent="Rat4"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="StopTimer" type="Timer" parent="Rat4"]
+one_shot = true
+
+[node name="Rat5" type="Area2D" parent="."]
+position = Vector2(1630, 690)
+collision_layer = 128
+script = ExtResource("1_0uewo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rat5"]
+shape = SubResource("RectangleShape2D_0nck2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rat5"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_qdb0v")
+
+[node name="PatrolTimer" type="Timer" parent="Rat5"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="StopTimer" type="Timer" parent="Rat5"]
+one_shot = true

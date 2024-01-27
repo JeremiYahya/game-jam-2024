@@ -1,0 +1,13 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1706279828
+icon.svg::CompressedTexture2D::5656924387475480828::1706272854::1706272867::1::::<><>::
+::res://scenes/::1706289071
+main.gd::GDScript::-1::1706283813::0::1::::Main<>Node<>::
+main.tscn::PackedScene::7562392433191987817::1706289071::0::1::::<><>::res://scenes/main.gd<>uid://doq4ushaapgdq::::res://sprites/temp_ground.png<>res://scenes/pit.gd
+player.gd::GDScript::-1::1706285859::0::1::::Player<>CharacterBody2D<>::
+player.tscn::PackedScene::6567795742948166799::1706288278::0::1::::<><>::res://scenes/player.gd<>uid://mov0pxlwn3q::::res://sprites/temp_player.png
+pit.gd::GDScript::-1::1706283586::0::1::::Pit<>Area2D<>::
+::res://sprites/::1706289114
+temp_enemy.png::CompressedTexture2D::436161299718037265::1706289114::1706289170::1::::<><>::
+temp_ground.png::CompressedTexture2D::8176733370979568454::1706273919::1706273920::1::::<><>::
+temp_player.png::CompressedTexture2D::25661409935865596::1706274015::1706274016::1::::<><>::

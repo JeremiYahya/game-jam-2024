@@ -1,0 +1,212 @@
+[gd_scene load_steps=18 format=3 uid="uid://df0jq7i4h1hg8"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_mshg5"]
+[ext_resource type="Texture2D" uid="uid://doq4ushaapgdq" path="res://sprites/temp_ground.png" id="1_xjspa"]
+[ext_resource type="Script" path="res://scenes/pit.gd" id="3_2l6ro"]
+[ext_resource type="Script" path="res://scenes/rat.gd" id="4_8abl1"]
+[ext_resource type="Texture2D" uid="uid://ghjro5lg8dnd" path="res://sprites/temp_enemy.png" id="4_uc8wk"]
+[ext_resource type="Script" path="res://scenes/camera_trigger.gd" id="4_wi6hc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpeyy"]
+size = Vector2(400, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tevb2"]
+size = Vector2(800, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu1qg"]
+size = Vector2(200, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpqwp"]
+size = Vector2(200, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3nvi"]
+size = Vector2(200, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdvap"]
+size = Vector2(1500, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vq04"]
+size = Vector2(1500, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhgpk"]
+size = Vector2(3000, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqnyo"]
+size = Vector2(100, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb8fp"]
+size = Vector2(100, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nck2"]
+size = Vector2(40, 40)
+
+[node name="Main" type="Node" node_paths=PackedStringArray("player", "camera", "ui", "respawn_timer", "up_trigger", "down_trigger")]
+script = ExtResource("1_mshg5")
+player = NodePath("")
+camera = NodePath("Camera2D")
+ui = NodePath("UI")
+respawn_timer = NodePath("RespawnTimer")
+up_trigger = NodePath("Triggers/UpTrigger")
+down_trigger = NodePath("Triggers/DownTrigger")
+
+[node name="UndergroundPlatforms" type="Node2D" parent="."]
+position = Vector2(0, 600)
+
+[node name="Platform" type="RigidBody2D" parent="UndergroundPlatforms"]
+position = Vector2(200, 585)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UndergroundPlatforms/Platform"]
+shape = SubResource("RectangleShape2D_fpeyy")
+
+[node name="Sprite2D" type="Sprite2D" parent="UndergroundPlatforms/Platform"]
+scale = Vector2(4, 0.5)
+texture = ExtResource("1_xjspa")
+
+[node name="Platform2" type="RigidBody2D" parent="UndergroundPlatforms"]
+position = Vector2(1000, 585)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UndergroundPlatforms/Platform2"]
+shape = SubResource("RectangleShape2D_tevb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="UndergroundPlatforms/Platform2"]
+scale = Vector2(8, 0.5)
+texture = ExtResource("1_xjspa")
+
+[node name="Platform3" type="RigidBody2D" parent="UndergroundPlatforms"]
+position = Vector2(1550, 435)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UndergroundPlatforms/Platform3"]
+shape = SubResource("RectangleShape2D_lu1qg")
+
+[node name="Sprite2D" type="Sprite2D" parent="UndergroundPlatforms/Platform3"]
+scale = Vector2(2, 0.5)
+texture = ExtResource("1_xjspa")
+
+[node name="Platform4" type="RigidBody2D" parent="UndergroundPlatforms"]
+position = Vector2(1800, 285)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UndergroundPlatforms/Platform4"]
+shape = SubResource("RectangleShape2D_xpqwp")
+
+[node name="Sprite2D" type="Sprite2D" parent="UndergroundPlatforms/Platform4"]
+scale = Vector2(2, 0.5)
+texture = ExtResource("1_xjspa")
+
+[node name="Platform5" type="RigidBody2D" parent="UndergroundPlatforms"]
+position = Vector2(1550, 135)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UndergroundPlatforms/Platform5"]
+shape = SubResource("RectangleShape2D_i3nvi")
+
+[node name="Sprite2D" type="Sprite2D" parent="UndergroundPlatforms/Platform5"]
+scale = Vector2(2, 0.5)
+texture = ExtResource("1_xjspa")
+
+[node name="OvergroundPlatforms" type="Node2D" parent="."]
+
+[node name="Platform" type="RigidBody2D" parent="OvergroundPlatforms"]
+position = Vector2(750, 585)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OvergroundPlatforms/Platform"]
+shape = SubResource("RectangleShape2D_rdvap")
+
+[node name="Sprite2D" type="Sprite2D" parent="OvergroundPlatforms/Platform"]
+scale = Vector2(15, 0.5)
+texture = ExtResource("1_xjspa")
+
+[node name="Platform2" type="RigidBody2D" parent="OvergroundPlatforms"]
+position = Vector2(2350, 585)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OvergroundPlatforms/Platform2"]
+shape = SubResource("RectangleShape2D_4vq04")
+
+[node name="Sprite2D" type="Sprite2D" parent="OvergroundPlatforms/Platform2"]
+scale = Vector2(15, 0.5)
+texture = ExtResource("1_xjspa")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+limit_left = 0
+limit_top = 600
+limit_bottom = 600
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 800.0
+offset_bottom = 600.0
+
+[node name="RespawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Triggers" type="Node2D" parent="."]
+
+[node name="Pit" type="Area2D" parent="Triggers"]
+position = Vector2(1000, 1250)
+collision_layer = 128
+script = ExtResource("3_2l6ro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Pit"]
+shape = SubResource("RectangleShape2D_jhgpk")
+
+[node name="UpTrigger" type="Area2D" parent="Triggers"]
+position = Vector2(1550, 540)
+script = ExtResource("4_wi6hc")
+is_up = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/UpTrigger"]
+shape = SubResource("RectangleShape2D_oqnyo")
+
+[node name="DownTrigger" type="Area2D" parent="Triggers"]
+position = Vector2(1550, 620)
+script = ExtResource("4_wi6hc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/DownTrigger"]
+shape = SubResource("RectangleShape2D_jb8fp")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Rat" type="Area2D" parent="Enemies" node_paths=PackedStringArray("patrol_timer", "stop_timer")]
+position = Vector2(750, 1140)
+collision_layer = 128
+script = ExtResource("4_8abl1")
+speed = 100.0
+patrol_timer = NodePath("PatrolTimer")
+stop_timer = NodePath("StopTimer")
+is_moving_right = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Rat"]
+shape = SubResource("RectangleShape2D_0nck2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemies/Rat"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_uc8wk")
+
+[node name="PatrolTimer" type="Timer" parent="Enemies/Rat"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="StopTimer" type="Timer" parent="Enemies/Rat"]
+one_shot = true
