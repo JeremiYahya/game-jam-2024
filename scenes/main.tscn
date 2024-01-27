@@ -40,9 +40,8 @@ size = Vector2(100, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0nck2"]
 size = Vector2(40, 40)
 
-[node name="Main" type="Node" node_paths=PackedStringArray("player", "camera", "ui", "respawn_timer", "up_trigger", "down_trigger")]
+[node name="Main" type="Node" node_paths=PackedStringArray("camera", "ui", "respawn_timer", "up_trigger", "down_trigger")]
 script = ExtResource("1_mshg5")
-player = NodePath("")
 camera = NodePath("Camera2D")
 ui = NodePath("UI")
 respawn_timer = NodePath("RespawnTimer")

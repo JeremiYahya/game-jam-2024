@@ -1,0 +1,137 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcsg1mpkpo7pm"]
+
+[ext_resource type="Texture2D" uid="uid://doq4ushaapgdq" path="res://sprites/temp_ground.png" id="1_m21mu"]
+[ext_resource type="Texture2D" uid="uid://cv52tuqjt3ec8" path="res://sprites/temp_jembatan.png" id="2_6m0mc"]
+[ext_resource type="Texture2D" uid="uid://ghjro5lg8dnd" path="res://sprites/temp_enemy.png" id="3_c571l"]
+[ext_resource type="Texture2D" uid="uid://cnaeq5u206t88" path="res://sprites/temp_falseenemy.png" id="4_7u22j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnlq5"]
+size = Vector2(300, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyul3"]
+size = Vector2(50, 250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikij8"]
+size = Vector2(500, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v4g4"]
+size = Vector2(200, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7pdh"]
+size = Vector2(300, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrw3n"]
+size = Vector2(200, 40)
+
+[node name="Part2" type="Node2D"]
+
+[node name="Ground" type="RigidBody2D" parent="."]
+position = Vector2(150, 575)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_fnlq5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+scale = Vector2(3, 0.5)
+texture = ExtResource("1_m21mu")
+
+[node name="Wall" type="RigidBody2D" parent="."]
+position = Vector2(25, 425)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource("RectangleShape2D_xyul3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall"]
+scale = Vector2(0.5, 2.5)
+texture = ExtResource("1_m21mu")
+
+[node name="Roof" type="RigidBody2D" parent="."]
+position = Vector2(375, 350)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roof"]
+shape = SubResource("RectangleShape2D_ikij8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Roof"]
+scale = Vector2(5, 1)
+texture = ExtResource("1_m21mu")
+
+[node name="Bridge" type="RigidBody2D" parent="."]
+position = Vector2(400, 563)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge"]
+shape = SubResource("RectangleShape2D_0v4g4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bridge"]
+scale = Vector2(2, 0.25)
+texture = ExtResource("2_6m0mc")
+
+[node name="Ground2" type="RigidBody2D" parent="."]
+position = Vector2(650, 575)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+shape = SubResource("RectangleShape2D_e7pdh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground2"]
+scale = Vector2(3, 0.5)
+texture = ExtResource("1_m21mu")
+
+[node name="Wall2" type="RigidBody2D" parent="."]
+position = Vector2(775, 425)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+shape = SubResource("RectangleShape2D_xyul3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall2"]
+scale = Vector2(0.5, 2.5)
+texture = ExtResource("1_m21mu")
+
+[node name="PipaBocor" type="RigidBody2D" parent="."]
+position = Vector2(250, 420)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipaBocor"]
+shape = SubResource("RectangleShape2D_hrw3n")
+
+[node name="Sprite2D" type="Sprite2D" parent="PipaBocor"]
+scale = Vector2(2, 0.4)
+texture = ExtResource("3_c571l")
+
+[node name="Flood" type="Sprite2D" parent="."]
+position = Vector2(400, 635)
+scale = Vector2(2.00663, 0.236512)
+texture = ExtResource("3_c571l")
+
+[node name="RatHorde" type="Sprite2D" parent="."]
+position = Vector2(450, 525)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_7u22j")
+
+[node name="CatPatrol" type="Sprite2D" parent="."]
+position = Vector2(650, 500)
+scale = Vector2(0.5, 1)
+texture = ExtResource("3_c571l")
+
+[node name="HatchFall" type="Sprite2D" parent="."]
+position = Vector2(687, 400)
+scale = Vector2(1.25, 0.5)
+texture = ExtResource("4_7u22j")
