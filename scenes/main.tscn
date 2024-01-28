@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://df0jq7i4h1hg8"]
+[gd_scene load_steps=76 format=3 uid="uid://df0jq7i4h1hg8"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_mshg5"]
 [ext_resource type="Texture2D" uid="uid://doq4ushaapgdq" path="res://sprites/temp_ground.png" id="1_xjspa"]
@@ -28,12 +28,18 @@
 [ext_resource type="AudioStream" uid="uid://c04gqbwo28vxl" path="res://audio/jatuh_3.mp3" id="11_mlv1j"]
 [ext_resource type="Texture2D" uid="uid://cuqiww3w5oo7i" path="res://sprites/kondangan.png" id="12_it1h4"]
 [ext_resource type="Texture2D" uid="uid://cqj4kp2n32o3i" path="res://sprites/a_tikus.png" id="20_v3bja"]
+[ext_resource type="AudioStream" uid="uid://b77rhavmldsyx" path="res://audio/tikus 1.mp3" id="22_emgsj"]
+[ext_resource type="AudioStream" uid="uid://cnjcvk6bfj60v" path="res://audio/burung wing.mp3" id="27_mlfhl"]
 [ext_resource type="Texture2D" uid="uid://cdrmlorhifkcl" path="res://sprites/b_ground.png" id="27_ukbtj"]
 [ext_resource type="Texture2D" uid="uid://dt3lrlqnq7yjk" path="res://sprites/b_lubang.png" id="28_2lxch"]
+[ext_resource type="AudioStream" uid="uid://rxhopse8ft0e" path="res://audio/speaker otw jatuh.mp3" id="28_b30sk"]
 [ext_resource type="AudioStream" uid="uid://bs2blbk5w1vpj" path="res://audio/nikahan tari piring.mp3" id="28_meh3v"]
+[ext_resource type="AudioStream" uid="uid://b85yemb8ynhll" path="res://audio/start button 2.mp3" id="28_vbcqk"]
+[ext_resource type="AudioStream" uid="uid://wyn1lyqky48s" path="res://audio/tikus ramai ramai.mp3" id="29_8s2l3"]
 [ext_resource type="Texture2D" uid="uid://dsotjwt5wpvlx" path="res://sprites/SPOILER_b_lightray.png" id="29_dhnwv"]
 [ext_resource type="Texture2D" uid="uid://coasvjmembqo7" path="res://sprites/speaker_atas.png" id="31_tos4o"]
 [ext_resource type="Script" path="res://scenes/front_canvas.gd" id="34_0s3ub"]
+[ext_resource type="Texture2D" uid="uid://ci10ydvql1hih" path="res://sprites/logo_game.png" id="39_r3n2r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2kxdf"]
 atlas = ExtResource("11_5gx5u")
@@ -166,7 +172,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Main" type="Node" node_paths=PackedStringArray("front_canvas", "camera", "ui", "respawn_timer", "up_trigger", "up_trigger_2", "down_trigger", "down_trigger_2", "down_trigger_3", "bridge_trigger", "checkpoint", "walk_audio", "jump_audio", "death_audio", "bad_end_area")]
+[node name="Main" type="Node" node_paths=PackedStringArray("front_canvas", "camera", "ui", "respawn_timer", "up_trigger", "up_trigger_2", "down_trigger", "down_trigger_2", "down_trigger_3", "bridge_trigger", "checkpoint", "start_audio", "walk_audio", "jump_audio", "death_audio", "bird_audio", "rats_audio", "speaker_fall_audio", "speaker_hit_audio", "bad_end_area")]
 script = ExtResource("1_mshg5")
 front_canvas = NodePath("FrontCanvas")
 camera = NodePath("Camera2D")
@@ -179,9 +185,14 @@ down_trigger_2 = NodePath("Triggers/DownTrigger2")
 down_trigger_3 = NodePath("Triggers/DownTrigger3")
 bridge_trigger = NodePath("Triggers/BridgeTrigger")
 checkpoint = [NodePath("Checkpoints/Checkpoint1"), NodePath("Checkpoints/Checkpoint2")]
+start_audio = NodePath("Audio/StartAudio")
 walk_audio = NodePath("Audio/WalkAudio")
 jump_audio = NodePath("Audio/Jump Audio")
 death_audio = [NodePath("Audio/DeathAudio1"), NodePath("Audio/DeathAudio2"), NodePath("Audio/DeathAudio3")]
+bird_audio = NodePath("Audio/BirdAudio")
+rats_audio = NodePath("Audio/RatsAudio")
+speaker_fall_audio = NodePath("Audio/SpeakerFallAudio")
+speaker_hit_audio = NodePath("Audio/SpeakerHitAudio")
 bad_end_area = NodePath("Triggers/BadEndArea")
 
 [node name="BG" type="Node2D" parent="."]
@@ -898,6 +909,12 @@ autostart = true
 [node name="StopTimer" type="Timer" parent="Enemies/Rat"]
 one_shot = true
 
+[node name="RatAudio" type="AudioStreamPlayer2D" parent="Enemies/Rat"]
+stream = ExtResource("22_emgsj")
+autoplay = true
+max_distance = 800.0
+attenuation = 5.09824
+
 [node name="Audio" type="Node" parent="."]
 
 [node name="WalkAudio" type="AudioStreamPlayer" parent="Audio"]
@@ -914,6 +931,20 @@ stream = ExtResource("10_55f6q")
 
 [node name="DeathAudio3" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("11_mlv1j")
+
+[node name="StartAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("28_vbcqk")
+
+[node name="BirdAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("27_mlfhl")
+
+[node name="RatsAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("29_8s2l3")
+
+[node name="SpeakerFallAudio" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("28_b30sk")
+
+[node name="SpeakerHitAudio" type="AudioStreamPlayer" parent="Audio"]
 
 [node name="Wedding" type="AudioStreamPlayer2D" parent="Audio"]
 position = Vector2(4150, 500)
@@ -1274,12 +1305,20 @@ texture = ExtResource("4_ehbra")
 position = Vector2(7000, 390)
 texture = ExtResource("5_qbxgx")
 
-[node name="FrontCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("start_label", "deliver_label", "bg", "ending_timer")]
+[node name="FrontCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("title", "start_label", "deliver_label", "bg", "camera_timer", "ending_timer")]
 script = ExtResource("34_0s3ub")
+title = NodePath("Title")
 start_label = NodePath("StartLabel")
 deliver_label = NodePath("DeliverLabel")
 bg = NodePath("BG")
+camera_timer = NodePath("CameraTimer")
 ending_timer = NodePath("EndingTimer")
+
+[node name="Title" type="TextureRect" parent="FrontCanvas"]
+offset_right = 1000.0
+offset_bottom = 568.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("39_r3n2r")
 
 [node name="StartLabel" type="Label" parent="FrontCanvas"]
 offset_left = 200.0
@@ -1316,5 +1355,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="CameraTimer" type="Timer" parent="FrontCanvas"]
+wait_time = 3.0
+one_shot = true
+
 [node name="EndingTimer" type="Timer" parent="FrontCanvas"]
-wait_time = 2.0
+wait_time = 4.0
+one_shot = true

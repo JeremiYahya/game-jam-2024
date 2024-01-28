@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cnjcvk6bfj60v"
+path="res://.godot/imported/burung wing.mp3-83aacf72b824155b92279478f0b0b0f3.mp3str"
+
+[deps]
+
+source_file="res://audio/burung wing.mp3"
+dest_files=["res://.godot/imported/burung wing.mp3-83aacf72b824155b92279478f0b0b0f3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

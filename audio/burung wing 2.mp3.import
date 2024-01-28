@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://sygaxt5448py"
+path="res://.godot/imported/burung wing 2.mp3-5faeb4edeb9cd922a67a31194de904f7.mp3str"
+
+[deps]
+
+source_file="res://audio/burung wing 2.mp3"
+dest_files=["res://.godot/imported/burung wing 2.mp3-5faeb4edeb9cd922a67a31194de904f7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

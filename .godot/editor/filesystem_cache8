@@ -1,8 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706375060
+::res://::1706425606
+export_presets.cfg::TextFile::-1::1706424381::0::1::::<><>::
 icon.svg::CompressedTexture2D::5656924387475480828::1706272854::1706272867::1::::<><>::
 README.md::TextFile::-1::1706319508::0::1::::<><>::
-::res://audio/::1706419251
+::res://audio/::1706427951
+burung wing 2.mp3::AudioStreamMP3::1313309792329948498::1706425739::1706425836::1::::<><>::
+burung wing.mp3::AudioStreamMP3::5704035243299642715::1706425732::1706425836::1::::<><>::
 jalan_1.mp3::AudioStreamMP3::3492018101289998315::1706324829::1706335027::1::::<><>::
 jalan_2.mp3::AudioStreamMP3::8599497109769169297::1706324848::1706335027::1::::<><>::
 jatuh_1.mp3::AudioStreamMP3::1364952677791137894::1706335896::1706335921::1::::<><>::
@@ -11,17 +14,28 @@ jatuh_3.mp3::AudioStreamMP3::6587822375046368741::1706336037::1706336040::1::::<
 lompat_1.mp3::AudioStreamMP3::5044357082508533682::1706335818::1706335921::1::::<><>::
 lompat_2.mp3::AudioStreamMP3::5024984478588893043::1706324809::1706324891::1::::<><>::
 nikahan tari piring.mp3::AudioStreamMP3::3705638498627921355::1706362133::1706419251::1::::<><>::
-::res://scenes/::1706420730
+speaker otw jatuh.mp3::AudioStreamMP3::1241141866136750938::1706426213::1706426233::1::::<><>::
+start button 2.mp3::AudioStreamMP3::4766048840728944357::1706427916::1706427951::1::::<><>::
+start button.mp3::AudioStreamMP3::9187064583354442919::1706427899::1706427951::1::::<><>::
+startbutton 3.mp3::AudioStreamMP3::5137620843119500255::1706427909::1706427951::1::::<><>::
+terbentur speaker 1.mp3::AudioStreamMP3::9041278193059167402::1706426697::1706426812::1::::<><>::
+terbentur speaker 2.mp3::AudioStreamMP3::1527474231837383079::1706426703::1706426812::1::::<><>::
+terbentur speaker 3.mp3::AudioStreamMP3::5060144454911645723::1706426708::1706426812::1::::<><>::
+tikus 1.mp3::AudioStreamMP3::4699568490675371415::1706426578::1706426875::1::::<><>::
+tikus 2.mp3::AudioStreamMP3::7089958008017739490::1706426584::1706426615::1::::<><>::
+tikus 3.mp3::AudioStreamMP3::6083328357254575582::1706426589::1706426615::1::::<><>::
+tikus ramai ramai.mp3::AudioStreamMP3::1594535993255104072::1706426593::1706426615::1::::<><>::
+::res://scenes/::1706427817
 bird.gd::GDScript::-1::1706355359::0::1::::Bird<>Enemy<>::
-bird.tscn::PackedScene::1443240436655800574::1706420730::0::1::::<><>::res://scenes/bird.gd<>uid://cimxt8g8oq511::::res://sprites/a_burung.png
+bird.tscn::PackedScene::1443240436655800574::1706427817::0::1::::<><>::res://scenes/bird.gd<>uid://cimxt8g8oq511::::res://sprites/a_burung.png
 bird_trigger.tscn::PackedScene::842810727280875141::1706357212::0::1::::<><>::
 camera_trigger.gd::GDScript::-1::1706297233::0::1::::<>Area2D<>::
 checkpoint.gd::GDScript::-1::1706335662::0::1::::Checkpoint<>Area2D<>::
 enemy.gd::GDScript::-1::1706290662::0::1::::Enemy<>Area2D<>::
-fake_bridge.tscn::PackedScene::4057543597932068687::1706420730::0::1::::<><>::uid://cqwyoad4ckmhp::::res://sprites/B_jembatan.png
+fake_bridge.tscn::PackedScene::4057543597932068687::1706427817::0::1::::<><>::uid://cqwyoad4ckmhp::::res://sprites/B_jembatan.png
 jumpscare_01.tscn::PackedScene::4469162542699478813::1706416444::0::1::::<><>::res://scenes/enemy.gd<>uid://cqj4kp2n32o3i::::res://sprites/a_tikus.png
-main.gd::GDScript::-1::1706420681::0::1::::Main<>Node<>::
-main.tscn::PackedScene::7562392433191987817::1706420730::0::1::::<><>::res://scenes/main.gd<>uid://doq4ushaapgdq::::res://sprites/temp_ground.png<>uid://n7w0mtyvsqbv::::res://sprites/b_tanah.png<>uid://cjtnwf1o3v0ft::::res://sprites/rm_padang.png<>res://scenes/pit.gd<>uid://clxu7kgibd27m::::res://sprites/BACKGROUND/langit_03.png<>res://scenes/checkpoint.gd<>uid://bacgprlidovw1::::res://sprites/temp_checkpoint.png<>res://scenes/rat.gd<>uid://b2aafs3oyrlue::::res://sprites/kastil_a.png<>uid://1txwras18ly7::::res://sprites/BACKGROUND/langit_02.png<>res://scenes/camera_trigger.gd<>uid://cqwyoad4ckmhp::::res://sprites/B_jembatan.png<>uid://bq2aersc5tvov::::res://sprites/BACKGROUND/langit_01.png<>uid://bcifrh8bdh7us::::res://sprites/kastil_b.png<>uid://de4lv2436vrxp::::res://sprites/BACKGROUND/awan_01.png<>uid://bp0ta7kctvql4::::res://audio/jalan_1.mp3<>uid://p1sok7ld13ha::::res://sprites/BACKGROUND/awan_03.png<>uid://c8ak0r8sifgtr::::res://sprites/BACKGROUND/awan_04.png<>uid://cd4r3ay0rfyle::::res://audio/lompat_1.mp3<>uid://i65ptny64uyk::::res://sprites/BACKGROUND/awan_05.png<>uid://tpgtojx6gnk5::::res://audio/jatuh_1.mp3<>uid://p1crcntbcmls::::res://audio/jatuh_2.mp3<>uid://c0tubmdddujyn::::res://sprites/BACKGROUND/04_daun.png<>uid://bvsok34cqvfnl::::res://sprites/sungai.png<>uid://c04gqbwo28vxl::::res://audio/jatuh_3.mp3<>uid://cqj4kp2n32o3i::::res://sprites/a_tikus.png<>uid://cdrmlorhifkcl::::res://sprites/b_ground.png<>uid://dt3lrlqnq7yjk::::res://sprites/b_lubang.png<>uid://bs2blbk5w1vpj::::res://audio/nikahan tari piring.mp3<>uid://coasvjmembqo7::::res://sprites/speaker_atas.png
+main.gd::GDScript::-1::1706427581::0::1::::Main<>Node<>::
+main.tscn::PackedScene::7562392433191987817::1706427817::0::1::::<><>::res://scenes/main.gd<>uid://doq4ushaapgdq::::res://sprites/temp_ground.png<>uid://n7w0mtyvsqbv::::res://sprites/b_tanah.png<>uid://cjtnwf1o3v0ft::::res://sprites/rm_padang.png<>res://scenes/pit.gd<>uid://clxu7kgibd27m::::res://sprites/BACKGROUND/langit_03.png<>res://scenes/checkpoint.gd<>uid://bacgprlidovw1::::res://sprites/temp_checkpoint.png<>res://scenes/rat.gd<>uid://b2aafs3oyrlue::::res://sprites/kastil_a.png<>uid://1txwras18ly7::::res://sprites/BACKGROUND/langit_02.png<>res://scenes/camera_trigger.gd<>uid://cqwyoad4ckmhp::::res://sprites/B_jembatan.png<>uid://bq2aersc5tvov::::res://sprites/BACKGROUND/langit_01.png<>uid://bcifrh8bdh7us::::res://sprites/kastil_b.png<>uid://de4lv2436vrxp::::res://sprites/BACKGROUND/awan_01.png<>uid://bp0ta7kctvql4::::res://audio/jalan_1.mp3<>uid://p1sok7ld13ha::::res://sprites/BACKGROUND/awan_03.png<>uid://c8ak0r8sifgtr::::res://sprites/BACKGROUND/awan_04.png<>uid://cd4r3ay0rfyle::::res://audio/lompat_1.mp3<>uid://i65ptny64uyk::::res://sprites/BACKGROUND/awan_05.png<>uid://tpgtojx6gnk5::::res://audio/jatuh_1.mp3<>uid://p1crcntbcmls::::res://audio/jatuh_2.mp3<>uid://c0tubmdddujyn::::res://sprites/BACKGROUND/04_daun.png<>uid://bvsok34cqvfnl::::res://sprites/sungai.png<>uid://c04gqbwo28vxl::::res://audio/jatuh_3.mp3<>uid://cuqiww3w5oo7i::::res://sprites/kondangan.png<>uid://cqj4kp2n32o3i::::res://sprites/a_tikus.png<>uid://b77rhavmldsyx::::res://audio/tikus 1.mp3<>uid://cnjcvk6bfj60v::::res://audio/burung wing.mp3<>uid://cdrmlorhifkcl::::res://sprites/b_ground.png<>uid://dt3lrlqnq7yjk::::res://sprites/b_lubang.png<>uid://rxhopse8ft0e::::res://audio/speaker otw jatuh.mp3<>uid://bs2blbk5w1vpj::::res://audio/nikahan tari piring.mp3<>uid://wyn1lyqky48s::::res://audio/tikus ramai ramai.mp3<>uid://dsotjwt5wpvlx::::res://sprites/SPOILER_b_lightray.png<>uid://coasvjmembqo7::::res://sprites/speaker_atas.png<>res://scenes/front_canvas.gd
 part_3.tscn::PackedScene::-1::1706335031::0::1::::<><>::
 pit.gd::GDScript::-1::1706283586::0::1::::Pit<>Area2D<>::
 platform.tscn::PackedScene::5950221453095197153::1706294896::0::1::::<><>::uid://doq4ushaapgdq::::res://sprites/temp_ground.png
@@ -30,6 +44,7 @@ player.tscn::PackedScene::6567795742948166799::1706365425::0::1::::<><>::res://s
 rat.gd::GDScript::-1::1706415781::0::1::::Rat<>Enemy<>::
 rat_march.gd::GDScript::-1::1706370376::0::1::::RatMarch<>Enemy<>::
 rat_trigger.tscn::PackedScene::1474401018705027821::1706368870::0::1::::<><>::
+front_canvas.gd::GDScript::-1::1706423792::0::1::::FrontCanvas<>CanvasLayer<>::
 speaker.tscn::PackedScene::9050133517328529246::1706416394::0::1::::<><>::res://scenes/speaker.gd<>uid://bpawxg5vbe6y::::res://sprites/speaker_bawah.png
 speaker.gd::GDScript::-1::1706372977::0::1::::Speaker<>Enemy<>::
 sound_fall_trigger.tscn::PackedScene::649452772455470920::1706371805::0::1::::<><>::
@@ -42,7 +57,7 @@ rat_6.tscn::PackedScene::2989261190973184508::1706370753::0::1::::<><>::res://sc
 rat_7.tscn::PackedScene::4123131133707346343::1706370753::0::1::::<><>::res://scenes/rat_march.gd<>uid://cqj4kp2n32o3i::::res://sprites/a_tikus.png
 rat_8.tscn::PackedScene::8044499682187382030::1706370753::0::1::::<><>::res://scenes/rat_march.gd<>uid://cqj4kp2n32o3i::::res://sprites/a_tikus.png
 rat_9.tscn::PackedScene::6318198470983135281::1706370753::0::1::::<><>::res://scenes/rat_march.gd<>uid://cqj4kp2n32o3i::::res://sprites/a_tikus.png
-::res://sprites/::1706420759
+::res://sprites/::1706428094
 a_burung.png::CompressedTexture2D::5360556814515123590::1706348950::1706353389::1::::<><>::
 a_kucing.png::CompressedTexture2D::2105987397004047253::1706348984::1706353389::1::::<><>::
 a_tikus.png::CompressedTexture2D::5916221746299662320::1706348966::1706353389::1::::<><>::
@@ -51,9 +66,11 @@ b_ground.png::CompressedTexture2D::5019251329682990783::1706349088::1706353387::
 B_jembatan.png::CompressedTexture2D::5942761391080219389::1706349162::1706353387::1::::<><>::
 b_lubang.png::CompressedTexture2D::8551351505819456444::1706349052::1706353387::1::::<><>::
 b_tanah.png::CompressedTexture2D::979896134863543319::1706349068::1706353387::1::::<><>::
+cover_800x600.png::CompressedTexture2D::7701030495971365476::1706427675::1706427692::1::::<><>::
 kastil_a.png::CompressedTexture2D::4281529380233175712::1706356966::1706374630::1::::<><>::
 kastil_b.png::CompressedTexture2D::2543647755153613570::1706356978::1706374630::1::::<><>::
 kondangan.png::CompressedTexture2D::6210174507428309392::1706356958::1706374630::1::::<><>::
+logo_game.png::CompressedTexture2D::5389586912722534387::1706428094::1706428100::1::::<><>::
 MC.png::CompressedTexture2D::2367950696053315257::1706323603::1706323607::1::::<><>::
 rm_padang.png::CompressedTexture2D::5444593049283534409::1706356950::1706374630::1::::<><>::
 speaker_atas.png::CompressedTexture2D::5756616077306094980::1706357250::1706374630::1::::<><>::

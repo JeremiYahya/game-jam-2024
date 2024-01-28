@@ -14,15 +14,21 @@ extends Node
 @export var bridge_trigger: Area2D
 @export var checkpoint: Array[Area2D]
 @export var fake_bridge: RigidBody2D
+@export var start_audio: AudioStreamPlayer
 @export var walk_audio: AudioStreamPlayer
 @export var jump_audio: AudioStreamPlayer
 @export var death_audio: Array[AudioStreamPlayer]
+@export var bird_audio: AudioStreamPlayer
+@export var rats_audio: AudioStreamPlayer
+@export var speaker_fall_audio: AudioStreamPlayer
+@export var speaker_hit_audio: AudioStreamPlayer
 @export var bad_end_area: Area2D
 @export var is_checkpoint: Array[bool] = [false, false]
 
 var first_time: bool = true
 var is_bad_end: bool = false
 var is_ending_shows: bool = false
+var is_camera_move: bool = false
 var jumpscare: Array[Node2D]
 var rat_march: Array[RatMarch]
 var bird_trigger: Area2D
@@ -70,11 +76,14 @@ func _ready():
 func _process(delta):
 	if player != null:
 		camera.global_position = player.global_position + Vector2(-350, 0)
+	elif is_camera_move:
+		camera.global_position += Vector2(300 * delta, 0)
 	if Input.is_action_just_pressed("action"):
 		if first_time:
 			first_time = false
 			_summon_player()
 			front_canvas.delete_start()
+			start_audio.play()
 		if is_bad_end && player != null:
 			_on_bad_end_enter()
 		if is_ending_shows:
@@ -129,6 +138,8 @@ func _summon_player():
 		if i != null:
 			i.queue_free()
 	jumpscare.clear()
+	if rats_audio.playing:
+		rats_audio.stop()
 
 
 func _on_player_died():
@@ -186,6 +197,7 @@ func _on_bird_trigger(body: Node2D):
 	if _player != null:
 		var _bird = bird_preload.instantiate()
 		add_child(_bird)
+		bird_audio.play()
 	bird_trigger.queue_free()
 
 
@@ -194,6 +206,7 @@ func _on_rat_marching(body: Node2D):
 	if _player != null:
 		for i in rat_march:
 			i.is_able_to_move = true
+			rats_audio.play()
 	var _sound = sound_fall_preload.instantiate()
 	add_child(_sound)
 	rat_trigger.queue_free()
@@ -206,7 +219,9 @@ func _on_sound_drop(body: Node2D):
 	if _player != null:
 		var _speaker = speaker_preload.instantiate()
 		add_child(_speaker)
+		_speaker.hit.connect(_on_speaker_hit)
 		sound_fall_trigger.queue_free()
+		speaker_fall_audio.play()
 
 
 func _on_bad_end_arrive(body: Node2D):
@@ -226,6 +241,13 @@ func _on_bad_end_exit(body: Node2D):
 func _on_bad_end_enter():
 	front_canvas.set_deliver(false)
 	player.queue_free()
+	front_canvas.camera_timer.start()
+	front_canvas.camera_timer.timeout.connect(_move_camera)
+
+
+func _move_camera():
+	camera.limit_right = 7200
+	is_camera_move = true
 	front_canvas.ending_timer.start()
 	front_canvas.ending_timer.timeout.connect(_show_bad_end)
 
@@ -233,6 +255,10 @@ func _on_bad_end_enter():
 func _show_bad_end():
 	front_canvas.bg.visible = true
 	is_ending_shows = true
+
+
+func _on_speaker_hit():
+	speaker_hit_audio.play()
 
 
 func _is_death_playing():

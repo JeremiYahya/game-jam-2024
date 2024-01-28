@@ -1,9 +1,11 @@
 class_name FrontCanvas
 extends CanvasLayer
 
+@export var title: TextureRect
 @export var start_label: Label
 @export var deliver_label: Label
 @export var bg: ColorRect
+@export var camera_timer: Timer
 @export var ending_timer: Timer
 
 
@@ -19,6 +21,7 @@ func _process(delta):
 
 func delete_start():
 	start_label.visible = false
+	title.visible = false
 
 
 func set_deliver(_visible: bool):
