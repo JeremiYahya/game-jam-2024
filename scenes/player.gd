@@ -2,6 +2,9 @@ class_name Player
 extends CharacterBody2D
 
 signal died
+signal walk
+signal jump
+signal idle
 
 const gravity = 1000
 const speed = 200
@@ -29,25 +32,30 @@ func _physics_process(delta):
 		velocity.y  -= jump_force
 		anim.play("jump")
 		is_jumpable = false
+		jump.emit()
 	
 	if Input.is_action_pressed("move_left") && Input.is_action_pressed("move_right"):
 		velocity.x = 0
 		if is_jumpable:
 			anim.play("idle")
+			idle.emit()
 	elif Input.is_action_pressed("move_left"):
 		velocity.x = -speed
 		anim.flip_h = true
 		if is_jumpable:
 			anim.play("walk")
+			walk.emit()
 	elif Input.is_action_pressed("move_right"):
 		velocity.x = speed
 		anim.flip_h = false
 		if is_jumpable:
 			anim.play("walk")
+			walk.emit()
 	else:
 		velocity.x = 0
 		if is_jumpable:
 			anim.play("idle")
+			idle.emit()
 	
 	move_and_slide()
 

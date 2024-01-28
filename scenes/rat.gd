@@ -5,6 +5,7 @@ extends Enemy
 @export var patrol_timer: Timer
 @export var stop_timer: Timer
 @export var is_moving_right: bool
+@export var sprite: AnimatedSprite2D
 
 
 
@@ -22,6 +23,7 @@ func _process(delta):
 
 func _move(delta):
 	var i = 1 if is_moving_right else -1
+	sprite.flip_h = is_moving_right
 	position += Vector2(i * speed * delta, 0)
 
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://vahf010cf5ef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p17lk"]
+size = Vector2(150, 150)
+
+[node name="RatTrigger" type="Area2D"]
+position = Vector2(4400, 1085)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p17lk")

@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://utd7u0yfnela"]
+
+[ext_resource type="Script" path="res://scenes/bird.gd" id="1_jvq56"]
+[ext_resource type="Texture2D" uid="uid://cimxt8g8oq511" path="res://sprites/a_burung.png" id="2_ix1rj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwvkh"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f7jk"]
+atlas = ExtResource("2_ix1rj")
+region = Rect2(0, 0, 127, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wvuk"]
+atlas = ExtResource("2_ix1rj")
+region = Rect2(127, 0, 127, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3byji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f7jk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wvuk")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[node name="Bird" type="Area2D" node_paths=PackedStringArray("timer")]
+position = Vector2(3400, 400)
+script = ExtResource("1_jvq56")
+speed = 800.0
+timer = NodePath("Timer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rwvkh")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3byji")
+animation = &"fly"
+autoplay = "fly"
+frame_progress = 0.459285
+flip_h = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+autostart = true

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d167m2tlfx27k"]
+
+[ext_resource type="Script" path="res://scenes/speaker.gd" id="1_uhbr7"]
+[ext_resource type="Texture2D" uid="uid://bpawxg5vbe6y" path="res://sprites/speaker_bawah.png" id="2_bl070"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj72d"]
+size = Vector2(50, 50)
+
+[node name="Speaker" type="Area2D" node_paths=PackedStringArray("timer")]
+position = Vector2(3550, 500)
+script = ExtResource("1_uhbr7")
+speed = 2000.0
+timer = NodePath("Timer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rj72d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_bl070")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

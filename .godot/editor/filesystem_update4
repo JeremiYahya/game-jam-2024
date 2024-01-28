@@ -1,10 +1,9 @@
 res://scenes/main.tscn
-res://scenes/player.tscn
-res://scenes/part_3.tscn
-res://scenes/part_2.tscn
-res://scenes/camera_trigger.gd
-res://scenes/enemy.gd
 res://scenes/main.gd
-res://scenes/pit.gd
-res://scenes/player.gd
+res://scenes/speaker.gd
+res://scenes/speaker.tscn
+res://scenes/jumpscare_01.tscn
 res://scenes/rat.gd
+res://scenes/fake_bridge.tscn
+res://scenes/bird.tscn
+res://scenes/front_canvas.gd

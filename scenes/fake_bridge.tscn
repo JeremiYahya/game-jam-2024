@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx2rfdxfwxtal"]
+
+[ext_resource type="Texture2D" uid="uid://cqwyoad4ckmhp" path="res://sprites/B_jembatan.png" id="1_q16u3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dcuu"]
+size = Vector2(400, 25)
+
+[node name="FakeBridge" type="RigidBody2D"]
+position = Vector2(2900, 572.5)
+collision_layer = 2
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4dcuu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 0.25)
+texture = ExtResource("1_q16u3")

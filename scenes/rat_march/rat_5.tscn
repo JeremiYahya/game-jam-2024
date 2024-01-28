@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1grtmsji2v6q"]
+
+[ext_resource type="Script" path="res://scenes/rat_march.gd" id="1_x1unn"]
+[ext_resource type="Texture2D" uid="uid://cqj4kp2n32o3i" path="res://sprites/a_tikus.png" id="2_a5pnm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nck2"]
+size = Vector2(40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vps2x"]
+atlas = ExtResource("2_a5pnm")
+region = Rect2(0, 0, 128, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn8jq"]
+atlas = ExtResource("2_a5pnm")
+region = Rect2(0, 0, 128, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28qor"]
+atlas = ExtResource("2_a5pnm")
+region = Rect2(128, 0, 128, 129)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ecxm1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vps2x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn8jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28qor")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Rat5" type="Area2D" node_paths=PackedStringArray("stop_timer")]
+position = Vector2(4700, 1140)
+collision_layer = 128
+script = ExtResource("1_x1unn")
+stop_timer = NodePath("StopTimer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0nck2")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_ecxm1")
+animation = &"idle"
+
+[node name="StopTimer" type="Timer" parent="."]
+wait_time = 4.5
+one_shot = true
